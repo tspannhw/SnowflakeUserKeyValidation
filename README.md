@@ -71,3 +71,43 @@ PublishSlack:   Push file and details to Slack.
 * https://dinochiesa.github.io/httpsig/
 * https://anycript.com/crypto/rsa
 * https://docs.snowflake.com/en/user-guide/key-pair-auth
+
+
+
+#### Snowflake Intelligence Generated
+
+
+Automated RSA Key Validation Workflow with Apache NiFi and Snowflake
+
+This article describes an automated workflow for validating Snowflake users' RSA public keys using Apache NiFi, with results published to Slack for monitoring and alerting purposes.
+
+System Components and Architecture
+Apache NiFi serves as the workflow automation platform, integrating with Snowflake for data retrieval and Slack for notifications. The workflow uses ExecuteSQLRecord processors to interact with Snowflake databases  and leverages NiFi's built-in record processing capabilities for data transformation and validation .
+
+Workflow Steps
+
+1. User Discovery and Filtering
+- The process begins with ExecuteSQLRecord querying Snowflake to list all users 
+- QueryRecord filters for active users with RSA public keys
+- Records are split into individual flowfiles for processing
+
+2. Key Retrieval and Processing
+- For each user, the workflow retrieves their RSA public key using DESC USER commands 
+- The public key information is extracted and formatted with proper PEM headers
+- Keys are validated to ensure proper PKCS8 formatting standards 
+
+3. Key Validation Process
+- Each public key is saved to a file for validation
+- OpenSSL commands verify the key's validity and size
+- The process checks for standard key sizes (1024, 2048, 4096 bits)
+- Snowflake requires a minimum 2048-bit RSA key pair for authentication 
+
+4. Slack Integration and Reporting
+- NiFi's Slack processors handle notification delivery 
+- Results include key validation status and size information
+- Real-time alerts are sent for any non-compliant keys
+
+Monitoring and Alerting
+The workflow provides continuous monitoring of RSA key compliance across the Snowflake environment. The Slack integration enables real-time notifications , allowing security teams to quickly identify and address any key-related issues.
+
+This automated solution helps organizations maintain security compliance by ensuring all RSA keys meet required standards and specifications. The workflow can be scheduled to run periodically or triggered by specific events, providing flexible key validation management .
