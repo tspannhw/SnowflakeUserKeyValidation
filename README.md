@@ -5,8 +5,10 @@ Snowflake User Key Validation with Apache NiFi
 
 ### Steps
 
-Call Snowflake with this SQL to get back a list of users
+ExecuteSQLRecord: Call Snowflake with this SQL to get back a list of users
   SHOW USERS;
+
+QueryRecord
 
 
 Call Snowflake with this SQL to get back the RSA public key
