@@ -1,5 +1,16 @@
-# SnowflakeUserKeyValidation
+### SnowflakeUserKeyValidation
+
 Snowflake User Key Validation with Apache NiFi
+
+
+![image](https://github.com/user-attachments/assets/46219139-50f2-4423-90ee-9565dc8fd384)
+
+
+![image](https://github.com/user-attachments/assets/aa9dc5ac-f1ea-4edc-b307-122d8031bc02)
+
+
+![image](https://github.com/user-attachments/assets/37ef8ef5-5154-4160-a40b-f18d50416a54)
+
 
 
 
