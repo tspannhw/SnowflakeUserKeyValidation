@@ -48,6 +48,10 @@ RouteOnContent:   Split out 1024, 2048, 4096 and unknown key size returned by op
 
 PublishSlack:   Push file and details to Slack.
 
+**** Steps
+
+
+![image](https://github.com/user-attachments/assets/14b5fabd-6529-4387-9dd6-38ff62fba3a1)
 
 
 **** Resources
